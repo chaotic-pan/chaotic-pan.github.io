@@ -2378,6 +2378,16 @@ input, select, textarea {
 
 /* Feature Icons */
 
+	ul.inner {
+		list-style: disc; !important;
+		margin: 0 0 2.25em 0;
+		padding-left: 1em;
+	}
+	
+	ul.inner li {
+		padding-left: 0.5em;
+	}
+
 	ul.list-icons {
 		list-style: none;
 		padding-left: 0;
