@@ -121,14 +121,14 @@ input, select, textarea {
 		}
 		
 		.more {
-			color: #0b95bf;
-			float: right;
-			border-bottom-color: transparent;
+			color: #0b95bf !important;
+			float: right !important;
+			border-bottom-color: transparent !important;
 		}
 		.back {
-			color: #0b95bf;
-			float: left;
-			border-bottom-color: transparent;
+			color: #0b95bf !important;
+			float: left !important;
+			border-bottom-color: transparent !important;
 		}
 
 	strong, b {
@@ -251,8 +251,8 @@ input, select, textarea {
 	}
 	
 	div.ImgSub {
-		padding: 0  0 50px 0;
-		text-align: center;
+		padding: 0  0 50px 0 !important;
+		text-align: center !important;
 	}
 
 /* Row */
