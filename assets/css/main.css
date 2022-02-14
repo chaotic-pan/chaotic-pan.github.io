@@ -119,6 +119,17 @@ input, select, textarea {
 			border-bottom-color: transparent;
 			color: #055d7a !important;
 		}
+		
+		.more {
+			color: #0b95bf;
+			float: right;
+			border-bottom-color: transparent;
+		}
+		.back {
+			color: #0b95bf;
+			float: left;
+			border-bottom-color: transparent;
+		}
 
 	strong, b {
 		color: #bfcccf;
@@ -132,6 +143,7 @@ input, select, textarea {
 	p {
 		margin: 0 0 2.25em 0;
 	}
+	
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #dfeef1;
@@ -236,6 +248,11 @@ input, select, textarea {
 
 	.align-right {
 		text-align: right;
+	}
+	
+	div.ImgSub {
+		padding: 0  0 50px 0;
+		text-align: center;
 	}
 
 /* Row */
