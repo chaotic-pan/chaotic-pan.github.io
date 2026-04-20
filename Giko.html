@@ -1,0 +1,207 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<head>
+    <title>Portfolio of Elisabeth Kintzel</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<section id="header">
+    <header>
+        <span class="image avatar"><img src="images/lizart.png" alt="" /></span>
+        <h1 id="logo"><a href="#">Liz Kintzel</a></h1>
+        <p>GIKO: Get In - Keep Out</p>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="#Overview" class="active">Overview</a></li>
+            <li><a href="#tech">Technical Aspects</a></li>
+            <li><a href="#Gallery">Gallery</a></li>
+            <li><a href="index.html#GIKO"> ← back to Main Page</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <ul class="feature-icons">
+            <li><a href="mailto: ElisabethKintzel@gmx.de" target="_blank"  class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            <li><a href="https://github.com/chaotic-pan" target="_blank"  class="icon brands fa-github"><span class="label">Github</span></a></li>
+            <li><a href="https://www.linkedin.com/in/elisabeth-kintzel-b44074201/" target="_blank"  class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://www.instagram.com/lizlissy/" target="_blank"  class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        </ul>
+    </footer>
+</section>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- About -->
+        <section id="Overview">
+            <div class="image main" data-position="center">
+                <img src="images/Giko/GikoBanner.png" alt="" />
+            </div>
+            <div class="container">
+                <p>
+                    <a href="index.html#GIKO" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+                
+                <header class="major">
+                    <h2>GIKO: Get In - Keep Out</h2>
+                </header>
+                
+                <h3> Overview</h3>
+                <p>
+                    GIKO is an asymmetrical, three-player game, where players jump into the roles of an agent, 
+                    a hacker and a guard as part of the GIKO Company. The agent and hacker must work together to navigate 
+                    through the level, while the guard and the drones they control, try to stop them.
+                    <br> <br>
+                    The <h7><b style="color:#00c7ff">AGENT</b></h7>
+                    is tasked with infiltrating a restricted facility, while communicate with the Hacker to solve tasks
+                    and find the “exit” to the level, all while avoiding the security drones roaming around.
+                <br> The  <h7> <b style="color:#00c7ff">HACKER</b></h7>, 
+                    hidden away in their secure office, has access to classified information, like a map, 
+                    showing the locations of objectives and security bots. Their job is it to guide the Agent 
+                    through the level via verbal communication, while also counteracting the Guard security measures. 
+                <br> The <h7> <b style="color:#00c7ff">GUARD</b>  </h7>
+                    needs to protect and defend the facility, stopping the Agent from finishing their objectives. 
+                    To do so, they have control over the “drones”, which are NPCs that provide the guard with video 
+                    footage of the premises, helping them to track the Agent down. Additionally, they can influence the
+                    level, by manipulating doors, cutting off the agent's escape routes and luring them into a trap.  
+                    <br> <br>
+                    While initially starting as a uni project, we have plans to pursue this game idea further in the
+                    future, expanding it to a fully flesh-out game which will eventually get released. 
+                    Since this includes major reworks of the prototype we created so far, we decided to no longer have 
+                    the demo freely available to play for the time being.
+                </p>
+
+                <p>
+                    <a href="index.html#GIKO" target="_self" class="back">
+                        ← back to Main Page</a> <br>
+                </p>
+                
+            </div>
+        </section>
+
+        <section id="tech">
+            <div class="container">
+                <h3> Technical Aspects </h3>
+                <p>
+                    The primary goal of our project was to create a functional multiplayer game in Unreal, including
+                    the networking of multiple computers, a lobby functionality, as well as a host-client setup using
+                    a Steam API. <br>
+                    For our secondary goal, we implemented a level generation system, utilising a
+                    grid based, procedural generation of rooms and walls. We additionally increased the randomness of
+                    our game further with generated tasks for the agent and hacker to complete.
+                    <br><br>
+                    My responsibilities in this project were primarily the implementation of the NPCs, and any aspects
+                    that were related to them. This included, for example, the setup of the dynamic NavMesh, 
+                    to enable the drones to move around the level, while reacting to the changing layout of the locked 
+                    and unlocked doors. <br>
+                
+                    Additionally, the NPCs had to be controllable by the Guard player via a map UI. This map 
+                    not only had to display the real-time location of all NPCs in the scene, it also had to be interactable,
+                    to allow the Guard to select any drone and give it instructions. <br>
+                    The available commands have been seperated into 3 different NPC states: while in the GUARD state, the
+                    player can click on any spot on the map to specify a location for the bot to walk to and stay at. 
+                    CLicking on the map again, deletes the old location and replaces it with the new position. The 
+                    PATROL state allows the Guard to define a patrol route which the drone with walk along, by placing 
+                    multiple position markers on the map. Finally, STANDBY can be used to delete all previous commands,
+                    causing the drone to freeze in place.
+                    <br><br>
+                    To be able to detect the Agent, running around the level, I fitted the droids with both sight and 
+                    sound based sensors. This way, they are not only reacting to visual contact, but are also able 
+                    to detect the player's footsteps, even if they are out of sight. Additionally, I added different 
+                    sound levels that are emitted when the player runs or sneaks around. <br>
+                    As soon as a bot detects the Agent, their current state are being overwritten, and 
+                    replaced with a new CHASE state. For as long as the drone is in pursuit, all previous and new
+                    instructions are being ignored, and instead the player is being followed. Whenever the bot looses track of 
+                    them however, it will continue towards the Agents last known location, which had been determined 
+                    either by sight or sound. Having reached this position, and still being unable to locate them again,
+                    the drone will return to its previous, controllable state again after a few seconds.
+                    <br><br>
+                    Besides being able to see the position of the NPCs on the map, the bots' visual inputs are also 
+                    streamed to a RenderTarget texture, so that it can be displayed on the screens in the Guard office,
+                    allowing the Guard player to see more of level.
+                    <div style="text-align: center;"><img src="images/Giko/screens.png" style="width:60%"><br></div>
+                    <div class="ImgSub">Screens in the Guard office, displaying the map on top, <br> and the current view of
+                        the individual drones on the smaller screen below</div>
+
+                <p>  Finally, while we did not make the 3D model and animations ourselves, I was still responsible for 
+                    implementing ou assets, and making sure they work together and fit our game's aesthetic. 
+                    This required wrangling the Unreal Animation Retargeter, to correctly apply the animations to our
+                    droid model, as well as reworking the model's materials to allow for matching recoloration and 
+                    displaying of our logo. <br>
+                </p>
+                    <div style="text-align: center;"><img src="images/Giko/botSwatches.png" style="width:60%"><br></div>
+                    <div class="ImgSub">Different recoloration options</div>
+                <p>
+                    <a href="index.html#GIKO" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+
+            </div>
+        </section>
+
+        <section id="Gallery">
+            <div class="container">
+                <h3>Gallery</h3>
+                <p></p>
+                
+                <img src="images/Giko/ShowTimePoster-2.png" alt="poster explaining the different roles amd their objectives" width="100%">
+                <img src="images/Giko/ShowTimePoster-3.png" alt="poster showing the different functionality of the 
+                map depending on the player role, as well as giving a short overview of the npc behaviour and the task randomization" width="100%">
+                <img src="images/Giko/ShowTimePoster-4.png" alt="poster showing development screenshots of the procedural
+                 level generation using a Binary Space Partition algorithm" width="100%">
+                
+                <img src="images/Giko/team.jpg" alt="Team photo" width="100%">
+                <div class="ImgSub">The Team GIKO Coorp Team</div>
+
+<!--                <video alt="Map Prototype" width="100%" controls>-->
+<!--                    <source src="images/Giko/Timeline%201.mp4" type="video/mp4">-->
+<!--                    Your browser does not support the video tag.-->
+<!--                </video>-->
+<!--                <div class="ImgSub">A collection of developmental progress snapshots</div>-->
+
+                <p>
+                    <a href="index.html#GIKO" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+                
+            </div>
+        </section>
+        
+    </div>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>last updated: 20.04.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
