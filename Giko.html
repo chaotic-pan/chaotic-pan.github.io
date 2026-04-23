@@ -6,7 +6,7 @@
 -->
 <html lang="en">
 <head>
-    <title>Portfolio of Elisabeth Kintzel</title>
+    <title>Portfolio of Liz Kintzel</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -26,7 +26,7 @@
             <li><a href="#tech">Technical Aspects</a></li>
             <li><a href="#Gallery">Gallery</a></li>
             <li><a href="index.html#GIKO"> ← back to Main Page</a></li>
-            <li><a href="#Contact">Contact</a></li>
+            <li><a href="index.html#Contact">Contact</a></li>
         </ul>
     </nav>
     <footer>
@@ -64,18 +64,18 @@
                 <p>
                     GIKO is an asymmetrical, three-player game, where players jump into the roles of an agent, 
                     a hacker and a guard as part of the GIKO Company. The agent and hacker must work together to navigate 
-                    through the level, while the guard and the drones they control, try to stop them.
+                    through the level, while the guard and the droids they control, try to stop them.
                     <br> <br>
                     The <h7><b style="color:#00c7ff">AGENT</b></h7>
                     is tasked with infiltrating a restricted facility, while communicate with the Hacker to solve tasks
-                    and find the “exit” to the level, all while avoiding the security drones roaming around.
+                    and find the “exit” to the level, all while avoiding the security droids roaming around.
                 <br> The  <h7> <b style="color:#00c7ff">HACKER</b></h7>, 
                     hidden away in their secure office, has access to classified information, like a map, 
                     showing the locations of objectives and security bots. Their job is it to guide the Agent 
-                    through the level via verbal communication, while also counteracting the Guard security measures. 
+                    through the level via verbal communication, while also counteracting the Guard's security measures. 
                 <br> The <h7> <b style="color:#00c7ff">GUARD</b>  </h7>
                     needs to protect and defend the facility, stopping the Agent from finishing their objectives. 
-                    To do so, they have control over the “drones”, which are NPCs that provide the guard with video 
+                    To do so, they have control over the droids, which are NPCs that provide the guard with video 
                     footage of the premises, helping them to track the Agent down. Additionally, they can influence the
                     level, by manipulating doors, cutting off the agent's escape routes and luring them into a trap.  
                     <br> <br>
@@ -105,47 +105,30 @@
                     our game further with generated tasks for the agent and hacker to complete.
                     <br><br>
                     My responsibilities in this project were primarily the implementation of the NPCs, and any aspects
-                    that were related to them. This included, for example, the setup of the dynamic NavMesh, 
-                    to enable the drones to move around the level, while reacting to the changing layout of the locked 
-                    and unlocked doors. <br>
-                
-                    Additionally, the NPCs had to be controllable by the Guard player via a map UI. This map 
-                    not only had to display the real-time location of all NPCs in the scene, it also had to be interactable,
-                    to allow the Guard to select any drone and give it instructions. <br>
-                    The available commands have been seperated into 3 different NPC states: while in the GUARD state, the
-                    player can click on any spot on the map to specify a location for the bot to walk to and stay at. 
-                    CLicking on the map again, deletes the old location and replaces it with the new position. The 
-                    PATROL state allows the Guard to define a patrol route which the drone with walk along, by placing 
-                    multiple position markers on the map. Finally, STANDBY can be used to delete all previous commands,
-                    causing the drone to freeze in place.
-                    <br><br>
-                    To be able to detect the Agent, running around the level, I fitted the droids with both sight and 
-                    sound based sensors. This way, they are not only reacting to visual contact, but are also able 
-                    to detect the player's footsteps, even if they are out of sight. Additionally, I added different 
-                    sound levels that are emitted when the player runs or sneaks around. <br>
-                    As soon as a bot detects the Agent, their current state are being overwritten, and 
-                    replaced with a new CHASE state. For as long as the drone is in pursuit, all previous and new
-                    instructions are being ignored, and instead the player is being followed. Whenever the bot looses track of 
-                    them however, it will continue towards the Agents last known location, which had been determined 
-                    either by sight or sound. Having reached this position, and still being unable to locate them again,
-                    the drone will return to its previous, controllable state again after a few seconds.
-                    <br><br>
-                    Besides being able to see the position of the NPCs on the map, the bots' visual inputs are also 
-                    streamed to a RenderTarget texture, so that it can be displayed on the screens in the Guard office,
-                    allowing the Guard player to see more of level.
-                    <div style="text-align: center;"><img src="images/Giko/screens.png" style="width:60%"><br></div>
-                    <div class="ImgSub">Screens in the Guard office, displaying the map on top, <br> and the current view of
-                        the individual drones on the smaller screen below</div>
-
-                <p>  Finally, while we did not make the 3D model and animations ourselves, I was still responsible for 
-                    implementing ou assets, and making sure they work together and fit our game's aesthetic. 
-                    This required wrangling the Unreal Animation Retargeter, to correctly apply the animations to our
-                    droid model, as well as reworking the model's materials to allow for matching recoloration and 
-                    displaying of our logo. <br>
+                    that were related to them, which included:
                 </p>
-                    <div style="text-align: center;"><img src="images/Giko/botSwatches.png" style="width:60%"><br></div>
-                    <div class="ImgSub">Different recoloration options</div>
+                <ul class="text">
+                    <li> setup of the dynamic NavMesh, reacting to level layout changing due to locked/unlocked doors </li>
+                    <li> Player detection through sight and sound sensors <ul>
+                        <li> Agent emitting different sound-levels during running, walking or sneaking  </li>
+                        <li> streaming NPC view to RenderTarget textures, to display them on screen in Guard office  </li>
+                    </ul></li>
+                    <li> Interactable Map UI <ul>
+                        <li> displaying real-time location of all NPCs </li>
+                        <li> manually changing NPC states <ul>
+                            <li>GUARD: move to and remains at position defined by player</li>
+                            <li>PATROL: continuously move along a player-defined route</li>
+                            <li>STANDBY: delete all previous commands and remain at current position</li>
+                            <li>CHASE: activated automatically whenever Agent is being detected, ignores all 
+                                previous commands and pursuits the player, returns to previous state if Agents is lost again</li>
+                        </ul> </li>
+                    </ul></li>
+                    <li> implementing external 3D models and retargeting animations to new rigs</li>
+                    <li> reworking droid model's materials to allow for matching recoloration and
+                        displaying of our logo </li>
+                </ul>
                 <p>
+                    <br>
                     <a href="index.html#GIKO" target="_self" class="back">
                         ← back to Main Page</a>
                 </p>
@@ -158,6 +141,47 @@
                 <h3>Gallery</h3>
                 <p></p>
                 
+               <img src="images/Giko/screens.png" style="width:100%"><br>
+                <div class="ImgSub">Screens in the Guard office, displaying the interactable Map on top, <br> and the POV of 
+                    the individual droids on the smaller screens below</div> 
+                
+                <img src="images/Giko/Map.png" style="width:100%"><br>
+                <div class="ImgSub"> Map UI, allowing to lock/unlock doors and controlling NPCs</div>
+                
+                <img src="images/Giko/botSwatches.png" style="width:100%"><br>
+                <div class="ImgSub">Different droid recoloration options</div>
+
+                <table>
+                    <tr class="image">
+                        <td><img src="images/Giko/GuardState.gif" style="width:100%">
+                            <div class="ImgSub">GUARD state animation</div></td>
+                        <td><img src="images/Giko/PatrolState.gif" style="width:100%">
+                            <div class="ImgSub">Droid patrolling along route</div></td>
+                    </tr>
+                    <tr class="image">
+                        <td><img src="images/Giko/droidChase.png" style="width:100%">
+                            <div class="ImgSub">Droid chasing Agent</div></td>
+                        <td><img src="images/Giko/StandbyState.gif" style="width:100%">
+                            <div class="ImgSub">STANDBY state animation</div></td>
+                    </tr>
+                </table>
+                
+                <table class="image">
+                    <tr>
+                        <td><img src="images/Giko/Room1.png" style="width:100%"></td>
+                        <td><img src="images/Giko/Room2.png" style="width:100%"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/Giko/GuardOffice.png" style="width:100%"></td>
+                        <td><img src="images/Giko/Room4.png" style="width:100%"></td>
+                    </tr>
+                </table>
+              
+                <div class="ImgSub">various props and room designs</div>
+                <br>
+                
+                <h4 align="center"> Promotional posters created for our booth at our uni's project fair: </h4>
+                <img src="images/Giko/ShowTimePoster-1.png" alt="promotional poster advertising our project's title and booth's location" width="100%">
                 <img src="images/Giko/ShowTimePoster-2.png" alt="poster explaining the different roles amd their objectives" width="100%">
                 <img src="images/Giko/ShowTimePoster-3.png" alt="poster showing the different functionality of the 
                 map depending on the player role, as well as giving a short overview of the npc behaviour and the task randomization" width="100%">
@@ -165,7 +189,7 @@
                  level generation using a Binary Space Partition algorithm" width="100%">
                 
                 <img src="images/Giko/team.jpg" alt="Team photo" width="100%">
-                <div class="ImgSub">The Team GIKO Coorp Team</div>
+                <div class="ImgSub">The GIKO Coorp Team</div>
 
 <!--                <video alt="Map Prototype" width="100%" controls>-->
 <!--                    <source src="images/Giko/Timeline%201.mp4" type="video/mp4">-->
@@ -187,7 +211,7 @@
     <section id="footer">
         <div class="container">
             <ul class="copyright">
-                <li>last updated: 20.04.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>last updated: 23.04.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>
     </section>

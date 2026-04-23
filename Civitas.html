@@ -1,0 +1,207 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<head>
+    <title>Portfolio of Liz Kintzel</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<section id="header">
+    <header>
+        <span class="image avatar"><img src="images/lizart.png" alt="" /></span>
+        <h1 id="logo"><a href="#">Liz Kintzel</a></h1>
+        <p>Genesis et Civitas</p>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="#Overview" class="active">Overview</a></li>
+            <li><a href="#tech">Technical Aspects</a></li>
+            <li><a href="#Gallery">Gallery</a></li>
+            <li><a href="index.html#Civitas"> ← back to Main Page</a></li>
+            <li><a href="index.html#Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <ul class="feature-icons">
+            <li><a href="mailto: ElisabethKintzel@gmx.de" target="_blank"  class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            <li><a href="https://github.com/chaotic-pan" target="_blank"  class="icon brands fa-github"><span class="label">Github</span></a></li>
+            <li><a href="https://www.linkedin.com/in/elisabeth-kintzel-b44074201/" target="_blank"  class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://www.instagram.com/lizlissy/" target="_blank"  class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        </ul>
+    </footer>
+</section>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- About -->
+        <section id="Overview">
+            <div class="image main" data-position="right">
+                <img src="images/Civitas/CivitasBanner.png" alt="" />
+            </div>
+            <div class="container">
+                <p>
+                    <a href="index.html#GIKO" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+                
+                <header class="major">
+                    <h2>Genesis et Civitas</h2>
+                </header>
+                
+                <h3> Overview</h3>
+                <p>
+                    This game is the combined result of two different student projects working in parallel, each with 
+                    their own goals and focal points. <br>
+                    Many games have such distinct phases, that they can be considered multiple games in one. This 
+                    separation is also present in our god game: starting with creating an earth for your creations to 
+                    live on, before moving on to guide and influence the development of their civilisations. 
+                    Both phases originate from the same idea: play god and watch your own world form. 
+                    But with that idea at the core and 8 people on our hands, we decided to split this project into two, 
+                    each one working on one  of the two core modes of our game.
+                    <br> <br>
+                    <img src="images/Civitas/Genesis_LogoText.png" style="width:40%"><br>
+                    The first phase, created by our sister-project Genesis, was the generation of a world map.
+                    Their primary goal was to create a procedural generation where each processing step is 
+                    more and more dependent on the previous ones. For that, they simulated the individual steps of 
+                    earth’s creation, from the forming of tectonic plates and their movement, to the influence of ocean 
+                    currents on the climate and appearing of rivers, forests and animals, all while trying to use as 
+                    little randomness as possible and instead emulating real geological and meteorological processes 
+                    in an abstract matter. 
+                    <br> <br>
+                    <img src="images/Civitas/Civitas_Logo_Text.png" style="width:40%"><br>
+                    At the end of the Genesis phase, a finished world map has been created, which is then is exported
+                    with all its parameters: A heightmap, temperature-maps, ground types, flora and fauna.
+                    Then, at the beginning of Civitas, this world gets imported and converted to be further be played on.
+                    <br>
+                    Our main goal was the simulation of multiple parallel civilisations, which need to compete or cooperate 
+                    for the resources the land offers in order to survive and thrive. At the same time however, we wanted
+                    to allow the player to influence the worlds development
+                    
+                    - guide civilizations to keep them alive <br>
+                    - promote a mortal to your personal saviour, your representetive on the world who can go from settlement
+                    to settlement and assist your creations <br>
+                </p>
+
+                <p>
+                    <a href="index.html#Civitas" target="_self" class="back">
+                        ← back to Main Page</a> <br>
+                </p>
+                
+            </div>
+        </section>
+
+        <section id="tech">
+            <div class="container">
+                <h3> Technical Aspects </h3>
+                <p>
+                    Many challenges derived from our separate systems. Although it was advantageous to create player 
+                    interaction, connectivity with the map and NPC logic separately, we often struggled to bring 
+                    everything together. We surpassed these challenges by more regular meetings and more communication 
+                    about git branches and tasks. <br>
+                    Another issue encountered during our work was the intractability of the player. We struggled to 
+                    strike a balance between simulated civilisation systems and influence from the player. The solution 
+                    was not only more abilities that the player could use, but also the critical implementation of the 
+                    saviours as controllable NPCs. <br>
+                    Lastly, we struggled with the evaluation of tasks and the scope of the project. As one of our team 
+                    members had to unexpectedly leave the project, we had to re-evaluate and prioritise tasks. Splitting 
+                    the workload from five people to four was challenging but possible thanks to communication and collaboration.
+                    <br><br>
+                    My responsibilities in this project were primarily the implementation of the NPCs, and any aspects
+                    that were related to them. This included, for example, the setup of the dynamic NavMesh, 
+                    to enable the drones to move around the level, while reacting to the changing layout of the locked 
+                    and unlocked doors.
+                    <ul class="text">
+                        <li> hex grid + converting continuous values to discrete ones </li>
+                        <li> NPCS (again) </li>
+                        <li> hex grid pathfinding </li>
+                        <li> civ behaviour: settling, seeking resources, splitting, merging, dying </li>
+                        <li> modeling and animation of npcs, tools, and buildings 
+                        <ul>
+                            <li> test</li>
+                            <li> test</li>
+                        </ul></li>
+                        <li> test</li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <td><img src="images/Civitas/axe.gif" style="width:100%"></td>
+                            <td><img src="images/Civitas/hoe.gif" style="width:100%"></td>
+                            <td><img src="images/Civitas/pickaxe.gif" style="width:100%"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/Civitas/walk.gif" style="width:100%"></td>
+                            <td><img src="images/Civitas/preach.gif" style="width:100%"></td>
+                            <td><img src="images/Civitas/Party.gif" style="width:100%"></td>
+                        </tr>
+                    </table>
+                    
+                    
+                </p>
+                
+                    <a href="index.html#Civitas" target="_self" class="back">
+                        ← back to Main Page</a>
+
+            </div>
+        </section>
+
+        <section id="Gallery">
+            <div class="container">
+                <h3>Gallery</h3>
+                <p></p>
+
+<!--                <table>-->
+<!--                    <tr>-->
+<!--                        <td><img src="images/Civitas/Earth.png" style="width:100%"></td>-->
+<!--                        <td><img src="images/Civitas/Land.png" style="width:100%"></td>-->
+<!--                        <td><img src="images/Civitas/Weather.png" style="width:100%"></td>-->
+<!--                    </tr>-->
+<!--                </table>-->
+               
+                        <td><img src="images/Civitas/Export.png" style="width:100%"></td>
+                        <td><img src="images/Civitas/CivitasONLY-1.png" style="width:100%"></td>
+                        <td><img src="images/Civitas/CivitasONLY-2.png" style="width:100%"></td>
+                        <td><img src="images/Civitas/CivitasONLY-3.png" style="width:100%"></td>
+                <p>
+                    <a href="index.html#Civitas" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+                
+            </div>
+        </section>
+        
+    </div>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>last updated: 20.04.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

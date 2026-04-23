@@ -105,6 +105,7 @@ body, input, select, textarea {
     line-height: 1.75em;
 }
 
+
 a {
     -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
     -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
@@ -259,7 +260,12 @@ pre code {
 }
 
 div.ImgSub {
-    padding: 0  0 50px 0 !important;
+    padding: 0  0 50px 0 ;
+    text-align: center !important;
+}
+
+div.ImgSubTable {
+    padding: 0 0 0 0 !important;
     text-align: center !important;
 }
 
@@ -2279,6 +2285,12 @@ dl {
     margin: 0 0 2.25em 0;
 }
 
+ul.text {
+    list-style: disc;
+    margin: -2em 0 0 1em;
+    padding-left: 1em;
+}
+
 /* Actions */
 
 ul.actions {
@@ -2541,6 +2553,14 @@ table tbody tr:nth-child(2n + 1) {
 
 table td {
     padding: 0.75em 0.75em;
+}
+
+table.image {
+    margin:  0 0 -1em 0; 
+}
+
+table tr.image {
+    margin:  0 0 -4em 0;
 }
 
 table th {
