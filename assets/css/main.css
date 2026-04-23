@@ -2287,7 +2287,7 @@ dl {
 
 ul.text {
     list-style: disc;
-    margin: -2em 0 0 1em;
+    margin: -2em 0 0 1em;  !important
     padding-left: 1em;
 }
 
@@ -2556,11 +2556,11 @@ table td {
 }
 
 table.image {
-    margin:  0 0 -1em 0; 
+    margin:  0 0 -1em 0 !important; 
 }
 
 table tr.image {
-    margin:  0 0 -4em 0;
+    margin:  0 0 -4em 0 !important;
 }
 
 table th {
