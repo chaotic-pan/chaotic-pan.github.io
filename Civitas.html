@@ -6,7 +6,7 @@
 -->
 <html lang="en">
 <head>
-    <title>Portfolio of Liz Kintzel</title>
+    <title>Liz Kintzel: Genesis et Civitas</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -86,12 +86,9 @@
                     Then, at the beginning of Civitas, this world gets imported and converted to be further be played on.
                     <br>
                     Our main goal was the simulation of multiple parallel civilisations, which need to compete or cooperate 
-                    for the resources the land offers in order to survive and thrive. At the same time however, we wanted
-                    to allow the player to influence the worlds development
-                    
-                    - guide civilizations to keep them alive <br>
-                    - promote a mortal to your personal saviour, your representetive on the world who can go from settlement
-                    to settlement and assist your creations <br>
+                    with one another for the resources the land offers in order to survive and thrive. At the same time 
+                    however, we wanted to allow the player to influence the worlds development, guiding the civilisations
+                    to keep them alive and happy.
                 </p>
 
                 <p>
@@ -118,40 +115,30 @@
                     members had to unexpectedly leave the project, we had to re-evaluate and prioritise tasks. Splitting 
                     the workload from five people to four was challenging but possible thanks to communication and collaboration.
                     <br><br>
-                    My responsibilities in this project were primarily the implementation of the NPCs, and any aspects
-                    that were related to them. This included, for example, the setup of the dynamic NavMesh, 
-                    to enable the drones to move around the level, while reacting to the changing layout of the locked 
-                    and unlocked doors.
+                    In this project I had two major topic i was responsible for: the creation and implementation of the NPCs, 
+                    and the import and conversion of the Genesis map data: <br>
+                </p>
                     <ul class="text">
-                        <li> hex grid + converting continuous values to discrete ones </li>
-                        <li> NPCS (again) </li>
-                        <li> hex grid pathfinding </li>
-                        <li> civ behaviour: settling, seeking resources, splitting, merging, dying </li>
-                        <li> modeling and animation of npcs, tools, and buildings 
-                        <ul>
-                            <li> test</li>
-                            <li> test</li>
+                        <li> Genesis data <ul>
+                            <li> importing world data and generating map geometry from it </li>
+                            <li> mapping genesis data to NPC needs (e.g. water->thirst, fertility->hunger)  </li>
+                            <li> converting continuous map values to a discreet hexagonal grid </li>
+                            <li> modifying specific genesis values via player skills </li>
                         </ul></li>
-                        <li> test</li>
+                        <li> NPCs <ul>
+                            <li> modeling, rigging of NPC models </li>
+                            <li> animation of several actions including: walking, tool usage, swimming, sailing, praying, 
+                                talking, dancing, idling, etc. </li>
+                            <li> pathfinding and movement across a hexagonal grid with varying traversing costs</li>
+                            <li> civilisation behaviour: seeking resources, settling, splitting, merging, dying </li>
+                            <li> modeling of buildings + ruined building variants</li>
+                        </ul></li>
                     </ul>
-                    <table>
-                        <tr>
-                            <td><img src="images/Civitas/axe.gif" style="width:100%"></td>
-                            <td><img src="images/Civitas/hoe.gif" style="width:100%"></td>
-                            <td><img src="images/Civitas/pickaxe.gif" style="width:100%"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="images/Civitas/walk.gif" style="width:100%"></td>
-                            <td><img src="images/Civitas/preach.gif" style="width:100%"></td>
-                            <td><img src="images/Civitas/Party.gif" style="width:100%"></td>
-                        </tr>
-                    </table>
-                    
-                    
+                <p>
+                    <br> <a href="index.html#Civitas" target="_self" class="back">
+                        ← back to Main Page</a>
                 </p>
                 
-                    <a href="index.html#Civitas" target="_self" class="back">
-                        ← back to Main Page</a>
 
             </div>
         </section>
@@ -159,20 +146,76 @@
         <section id="Gallery">
             <div class="container">
                 <h3>Gallery</h3>
-                <p></p>
 
-<!--                <table>-->
-<!--                    <tr>-->
-<!--                        <td><img src="images/Civitas/Earth.png" style="width:100%"></td>-->
-<!--                        <td><img src="images/Civitas/Land.png" style="width:100%"></td>-->
-<!--                        <td><img src="images/Civitas/Weather.png" style="width:100%"></td>-->
-<!--                    </tr>-->
-<!--                </table>-->
-               
-                        <td><img src="images/Civitas/Export.png" style="width:100%"></td>
-                        <td><img src="images/Civitas/CivitasONLY-1.png" style="width:100%"></td>
-                        <td><img src="images/Civitas/CivitasONLY-2.png" style="width:100%"></td>
-                        <td><img src="images/Civitas/CivitasONLY-3.png" style="width:100%"></td>
+                <table>
+                    <tr class="image">
+                        <td><img src="images/Civitas/axe.gif" style="width:100%">
+                            <div class="ImgSub">Tree-chopping animation</div></td>
+                        <td><img src="images/Civitas/hoe.gif" style="width:100%">
+                            <div class="ImgSub">Farming animation</div></td>
+                        <td><img src="images/Civitas/pickaxe.gif" style="width:100%">
+                            <div class="ImgSub">Mining animation</div></td>
+                    </tr>
+                    <tr class="image">
+                        <td><img src="images/Civitas/walk.gif" style="width:100%">
+                            <div class="ImgSub">Walking animation</div></td>
+                        <td><img src="images/Civitas/preach.gif" style="width:100%">
+                            <div class="ImgSub">Saviour Preaching animation</div></td>
+                        <td><img src="images/Civitas/Party.gif" style="width:100%">
+                            <div class="ImgSub">Dancing animations variants</div></td>
+                    </tr>
+                </table>
+                <table class="image">
+                    <tr>
+                        <td style="width:50%"><img src="images/Civitas/boats1.png" style="width:100%"></td>
+                        <td style="width:50%"> <img src="images/Civitas/boats2.png" style="width:100%"></td>
+                    </tr>
+                </table>
+                <div class="ImgSub">traveling NPCs crossing water via boats</div>
+                
+                <img src="images/Civitas/ruin.png" style="width:100%">
+                <div class="ImgSub">ruined city with dead population</div>
+                
+                <img src="images/Civitas/skilltree.png" style="width:100%">
+                <div class="ImgSub">unlockable skill tree</div>
+
+                <img src="images/Civitas/map.png" style="width:100%">
+                <div class="ImgSub">world geometry generated from genesis data</div>
+
+                <table class="image">
+                    <tr>
+                        <td style="width:50%"><img src="images/Civitas/heatmap1.png" style="width:100%"></td>
+                        <td style="width:50%"><img src="images/Civitas/heatmap2.png" style="width:100%"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:50%"><img src="images/Civitas/heatmap3.png" style="width:100%"></td>
+                        <td style="width:50%"><img src="images/Civitas/heatmap4.png" style="width:100%"></td>
+                    </tr>
+                </table>
+                <div class="ImgSub">heatmap overlays visualizing map data</div>
+                
+                <h4 align="center"> Promotional posters created for our booths at our uni's project fair: </h4>
+                <table>
+                    <tr>
+                        <td style="width:33%"><img src="images/Civitas/Earth.png" style="width:100%"></td>
+                        <td style="width:33%"> <img src="images/Civitas/Land.png" style="width:100%"></td>
+                        <td style="width:33%"> <img src="images/Civitas/Weather.png" style="width:100%"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/Civitas/Export.png" style="width:320%"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/Civitas/CivitasONLY-1.png" style="width:320%"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/Civitas/CivitasONLY-2.png" style="width:320%"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/Civitas/CivitasONLY-3.png" style="width:320%"></td>
+                    </tr>
+                   
+                </table>
+              
                 <p>
                     <a href="index.html#Civitas" target="_self" class="back">
                         ← back to Main Page</a>
