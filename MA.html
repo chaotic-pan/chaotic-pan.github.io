@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<head>
+    <title>Liz Kintzel: Master Thesis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<section id="header">
+    <header>
+        <span class="image avatar"><img src="images/lizart.png" alt="" /></span>
+        <h1 id="logo"><a href="#">Liz Kintzel</a></h1>
+        <p>Procedural Animations with SoftBody Physics in Godot </p>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="#Overview" class="active">Overview</a></li>
+            <li><a href="#tech">Technical Aspects</a></li>
+            <li><a href="#Gallery">Gallery</a></li>
+            <li><a href="index.html#MA"> ← back to Main Page</a></li>
+            <li><a href="index.html#Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <ul class="feature-icons">
+            <li><a href="mailto: ElisabethKintzel@gmx.de" target="_blank"  class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            <li><a href="https://github.com/chaotic-pan" target="_blank"  class="icon brands fa-github"><span class="label">Github</span></a></li>
+            <li><a href="https://www.linkedin.com/in/elisabeth-kintzel-b44074201/" target="_blank"  class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://www.instagram.com/lizlissy/" target="_blank"  class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        </ul>
+    </footer>
+</section>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- About -->
+        <section id="Overview">
+            <div class="image main" data-position="center">
+                <img src="images/MA/MA_banner.png" alt="" />
+            </div>
+            <div class="container">
+                <p>
+                    <a href="index.html#MA" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+                
+                <header class="major">
+                    <h2>Procedural Animations with SoftBody Physics in Godot</h2>
+                </header>
+                
+                <h3> Overview</h3>
+                <p>
+                    This paper explores the possibilities of procedurally generated animations that are adaptive to user 
+                    input and environments in combination with deformable meshes, simulated through SoftBody physics. 
+                    Due to a focus on applications in the indie game scene, the goals of this paper are not to find the 
+                    most realistically accurate solutions, but rather to achieve a blend between performance lightening 
+                    optimizations and visually pleasing stylizations, all while relying exclusively on freely available, 
+                    open-source tools, like the Godot game engine and the 3D modeling and animating software Blender.
+                    <br><br>
+                    The results are a character mesh, which has been separated into distinct main body sections, to allow 
+                    for faster and more stable physics simulation created by a custom written SoftBody physics class, 
+                    based on the Mass-Spring-Model. Additionally, the mesh has been internally subdivided to allow for 
+                    secure attachments to a procedurally animated character rig, without interfering with the soft 
+                    physics of the outer mesh surface.
+                    <br><br>
+                    This page only presents a summarized overview of my work, but the entire thesis can be read 
+                    <a href="images/MA/MA_Kintzel.pdf" target="_blank">here</a>. <br>
+                </p>
+
+                <p>
+                    <a href="index.html#MA" target="_self" class="back">
+                        ← back to Main Page</a> <br>
+                </p>
+                
+            </div>
+        </section>
+
+        <section id="tech">
+            <div class="container">
+                <h3> Technical Aspects </h3>
+                <p>
+                    The two big topics I aimed to combine in my thesis were SoftBody Simulation and Procedural Animation.
+                    However, since I restricted myself to only use open-source tools, these two aspects lacked 
+                    compatibility. Hence, I created custom alternatives to the tools Godot offered. 
+                </p>
+                <h4 style="color:#00c7ff"> Procedural Animation </h4>
+                <p>
+                    I started out with creating a simplified 2D prototype of a procedurally walking 4-legged character. 
+                    The only manual input this character was supposed to react to was a general walking direction, 
+                    at first provided by a simple target location, communicated via a mouse click on any point on the 
+                    screen, and later replaced with more flexible WASD inputs, that control for-/backwards movement as 
+                    well as rotation. <br>
+                    With the movement of the main body controllable, the limbs then automatically react accordingly, 
+                    by making sure reach foot always stay in a natural range and angle from the body, resulting in the 
+                    alternating movement of each foot. 
+                    <br> <br>
+                    Since Godot did not include any IK chain tools for 2D nor (at the time I began working on this thesis)
+                    3D, I had to implement one myself as well, to allow the body and feet to be connected by legs. While
+                    there are multiple iteration-based IK solutions, my case only required simplified 2-bone-IKs, which 
+                    I achieved with a geometry-based approach instead. <br>
+                    The 2D step logic was later adapted into 3-dimensions, by expanding them with sine-curve-based foot-lift,
+                    and a hip-tilt algorithm function, driven by the foot placement.
+                </p>
+                <h4 style="color:#00c7ff"> SoftBody Simulation </h4>
+                <p>
+                   The decision to create a fully custom SoftBody class was made due to Godot's SoftBody physics being 
+                    unsuited for combination with animation in multiple ways: firstly,
+                    the interface for pinning vertices of the mesh to a rig or other control objects is unnecessarily tedious
+                    and redundant, since it requires each mesh vertex to be configured individually, with no option to
+                    import that data from another program, making this tool functionally unusable for even slight higher
+                    resolution meshes. Secondly, it only allows for full pinning of outer vertices to individual objects,
+                    resulting in harsh deformation of the surface. My goal however was it to achieve a movement that imitates
+                    the behaviour of real bodies, where the movement is driven from the bones within, which indirectly
+                    pull along the soft tissue around them. 
+                    <br><br>
+                    To create my custom SoftBodies, I internally subdivided the mesh, which created internal support springs, that 
+                    help preserving the objects volume, as well as internal access points, that could then be pinned to the 
+                    animation rig.
+                    Additionally, as a way to improve the performance of simulating complex, concave character meshes, I
+                    developed a concept that separates the full mesh into smaller, simplified body sections, based on the
+                    main bone areas of the rig, and only simulate these proxy-objects. The original mesh surface can then 
+                    be laid over these objects again, and contrasts to follow their deformations, driven by both
+                    animations and physics.
+                </p>
+                <p>
+                    <br>
+                    <a href="index.html#MA" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+
+            </div>
+        </section>
+
+        <section id="Gallery">
+            <div class="container">
+                <h3>Gallery</h3>
+                <p></p>
+                
+                <img src="images/MA/customSB.png" style="width:100%"><br>
+                <img src="images/MA/godotSB.png" style="width:100%"><br>
+                <div class="ImgSub">stability comparision between two segmented lizard meshes falling on a ground collision plane, 
+                    simulated with custom-written SoftBody physics (top) vs. Godot physics SoftBody (bottom)
+                    </div>
+                
+                <table class="image">
+                    <tr>
+                        <td style="width:50%"><img src="images/MA/2DlizardDebug.png" style="width:100%"></td>
+                        <td style="width:50%"><img src="images/MA/2Dlizard.png" style="width:100%"></td>
+                    </tr>
+                </table>
+                <div class="ImgSub">2D walking lizard debug view (left) and final render view (right)<br>
+                    <a href="https://www.youtube.com/watch?v=t5wbhbg86NY" target="_blank">
+                        watch video</a></div>
+                
+                <table class="image">
+                    <tr>
+                        <td style="width:50%"><img src="images/MA/2Dik.png" style="width:100%"></td>
+                        <td style="width:50%"><img src="images/MA/3Dik.png" style="width:100%"></td>
+                    </tr>
+                </table>
+                <div class="ImgSub">geometrical IK solution in 2D and 3D</div>
+                
+                <table>
+                    <tr class="image">
+                        <td style="width:48%"><img src="images/MA/cubeSubdiv.png" style="width:100%">
+                            <div class="ImgSub">internal subdivision for a Cube</div></td>
+                        <td style="width:52%"><img src="images/MA/ballSubdiv.png" style="width:100%">
+                            <div class="ImgSub">internal subdivision for a low-poly sphere</div></td>
+                    </tr>
+                </table>
+
+                <table class="image">
+                    <tr>
+                        <td style="width:52%"><img src="images/MA/hiptilt1.png" style="width:100%"></td>
+                        <td style="width:48%"><img src="images/MA/hiptilt2.png" style="width:100%"></td>
+                    </tr>
+                </table>
+                <div class="ImgSub">automatic hip-tilt prototype driven by foot placement<br>
+                    <a href="https://www.youtube.com/watch?v=FP34aSTA0rg" target="_blank">
+                        watch video</a></div>
+                
+                <table>
+                    <tr class="image">
+                        <td  style="width:50%"><img src="images/MA/jiggle.png" style="width:100%">
+                            <div class="ImgSub">exaggerated jiggle demo of custom SoftBody <br>
+                                <a href="https://www.youtube.com/watch?v=7kjEUOINWd0" target="_blank">
+                                    watch video</a></div></td>
+                        <td style="width:50%"><img src="images/MA/tailwag.png" style="width:100%">
+                            <div class="ImgSub">procedural tail movement demo <br>
+                                <a href="https://www.youtube.com/watch?v=-6fck7u33yA" target="_blank">
+                                    watch video</a></div></td>
+                    </tr>
+                </table>
+
+                <p>
+                    <a href="index.html#MA" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+                
+            </div>
+        </section>
+        
+    </div>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>last updated: 23.04.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

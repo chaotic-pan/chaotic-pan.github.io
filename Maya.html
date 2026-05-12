@@ -22,10 +22,12 @@
     </header>
     <nav id="nav">
         <ul>
-            <li><a href="#Overview" class="active">Overview</a></li>
-            <li><a href="#Gallery">Gallery</a></li>
-            <li><a href="index.html#Maya"> ← back to Main Page</a></li>
-            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#About" class="active">Overview</a></li>
+            <li><a href="#Model"> Modeling</a></li>
+            <li><a href="#Animation"> Rigging + Animation</a></li>
+            <li><a href="#Physics">Physics Simulation</a></li>
+            <li><a href="index.html#Blender"> ← back to Main Page</a></li>
+            <li><a href="index.html#Contact">Contact</a></li>
         </ul>
     </nav>
   <footer>
@@ -45,80 +47,155 @@
   <div id="main">
 
     <!-- About -->
-    <section id="About">
-      <div class="image main" data-position="center">
-        <img src="images/Maya/Maya_banner.png" alt="" />
-      </div>
-      <div class="container">
-        <p>
-          <a href="index.html#Maya" target="_self" class="back">
-            ← back to Main Page</a>
-        </p>
+      <section id="About">
+          <div class="image main" data-position="center">
+              <img src="images/Maya/Maya_banner.png" alt="" />
+          </div>
+          <div class="container">
+              <p>
+                  <a href="index.html#Maya" target="_self" class="back">
+                      ← back to Main Page</a>
+              </p>
+              
+              <header class="major">
+                  <h2>3D Modeling</h2>
+              </header>
+              
+              <h3> Overview </h3>
+              <p>
+                  
+                  
+                  During my 3D Design class, I learned the basics of Maya for modeling, texturing, lighting, and rendering. 
+                  Some of these projects were assignments, while others I created on my own, just for fun and more practice.
 
-        <header class="major">
-          <h2>3D Modeling</h2>
-        </header>
-
-        <h3> Overview </h3>
-        <p>
-          During my 3D Design class, I learned the basics of Maya for modeling, texturing, lighting, and rendering.
-          Some of these projects were assignments, while others I created on my own, just for fun and more practice.
-        </p>
-
-        <h3> Links </h3>
-        <p>
-          For more information, check out the
-          <a href="https://github.com/chaotic-pan/3D-Models" target="_blank">
-            Github Repository. </a>
-        </p>
-
-        <p>
-          <a href="index.html#Maya" target="_self" class="back">
-            ← back to Main Page</a> <br>
-        </p>
-        
-      </div>
-    </section>
-
-    <section id="Gallery">
-      <div class="container">
-        <h3>Gallery</h3>
-        <p></p>
-
-        <img src="images/Maya/AmongUs.png" alt="Among Us Characters" width=100%>
-        <div class="ImgSub"> Among Us inspired Models </div>
-
-        <img src="images/Maya/Gramophone.png" alt="Gramophone" width=100%>
-        <div class="ImgSub"> Gramophone  Model </div>
-
-        <img src="images/Maya/IceTea.png" alt="Ice Tea Glass" width=100%>
-        <div class="ImgSub"> Ice Tea Glass Model </div>
-
-        <img src="images/Maya/Clock.png" alt="grandfather clock" width=100%>
-        <div class="ImgSub"> Grandfather Clock Model </div>
-
-        <img src="images/Maya/bottle.png" alt="Wine Bottle" width=100%>
-        <div class="ImgSub"> Final Rendering of Wine Bottle Model + Texture + Lightning</div>
-
-        <p>
-          <a href="index.html#Maya" target="_self" class="back">
-            ← back to Main Page</a>
-        </p>
-        
-      </div>
-    </section>
-
+                  Through independent studies, I taught myself how to do 3D modeling, rigging, animation, and physics 
+                  simulations. Primarily, I used Blender for these projects, but I've also some experience with Maya.
+              </p>
+              <p>
+                  <a href="index.html#Maya" target="_self" class="back">
+                      ← back to Main Page</a> <br>
+              </p>
+          </div>
+      </section>
+      
+      <section id="Model">       
+          <div class="container">       
+              <h3>Modeling</h3>
+              <div style="text-align: center;"><img src="images/Maya/cubeIslands.png" alt="Among Us Characters" style="width:70%"></div>   
+              <div class="ImgSub"> "Cube Islands" model, constructed from primitives </div>
+              <img src="images/Maya/Cafe.png" alt="Among Us Characters" style="width:100%">       
+              <div class="ImgSub"> Café model </div>
+              <img src="images/Maya/LizkoSit.png" alt="Among Us Characters" style="width:100%">       
+              <div class="ImgSub"> Character model "Lizko"</div>
+              
+              <img src="images/Maya/AmongUs.png" alt="Among Us Characters" style="width:100%">       
+              <div class="ImgSub"> Among Us inspired models </div>
+              
+              <img src="images/Maya/Gramophone.png" alt="Gramophone" style="width:100%">       
+              <div class="ImgSub"> untextured Gramophone  model </div>
+              
+              <p>       
+                  <a href="index.html#Maya" target="_self" class="back">       
+                      ← back to Main Page</a>   
+              </p>       
+          
+          </div>   
+      </section>
+      <section id="Animation">       
+          <div class="container">       
+              <h3>Rigging + Animation</h3>
+              <ul>
+                  <li>building uo skeleton from scratch</li>
+                  <li>IK controller</li>
+                  <li>bone drivers</li>
+                  <li>bone layers</li>
+                  <li>bone widgets</li>
+                  <li>bendy bones setup for curve-like objects like hair</li>
+                  <li>custom written python script to create widget control bone visibilities and IK settings</li>
+                  <li>facial expression animation</li>
+                  <li>walk cycle and tool usage</li>
+              </ul>
+              
+              <table>
+                  <tr class="image">
+                      <td><img src="images/Maya/LizkoFaceDemo.png" style="width:95%">
+                          <div class="ImgSub">Face rig based on 2D texture animation<br>
+                              <a href="https://www.youtube.com/watch?v=A4WDCfJJeec" target="_blank">
+                                  watch video</a></div></td>
+                      <td><img src="images/Maya/ManiFaceDemo.png" style="width:105%">
+                          <div class="ImgSub">3D face rig<br>
+                              <a href="https://www.youtube.com/watch?v=8mkE4xoa2Qg" target="_blank">
+                                  watch video</a></div></td>
+                  </tr>
+              </table>
+              <table>
+                  <tr class="image">
+                      <td style="width:50%"><img src="images/Maya/DanceAnimation.png" style="width:100%">
+                          <div class="ImgSub">Dance Animation<br>
+                              <a href="https://www.youtube.com/watch?v=DzTh7wAFF60" target="_blank">
+                                  watch video</a></div></td>
+                      <td><img src="images/Maya/WalkAnimation.png" style="width:100%">
+                          <div class="ImgSub">Walk Cycle<br>
+                              <a href="https://www.youtube.com/watch?v=4Kuv33OwGig" target="_blank">
+                                  watch video</a></div></td>
+                  </tr>
+              </table>
+              <table>
+                  <tr class="image">
+                      <td style="width:50%"><img src="images/Maya/UnrealRetargeting.png" style="width:100%">
+                      <td><img src="images/Maya/UnrealImport.png" style="width:100%">
+                  </tr>
+              </table>
+                  <br> <div class="ImgSub">Retargeting skeleton for Unreal import <br>
+                      <a href="https://www.youtube.com/watch?v=bkzOo3vP3sY" target="_blank">
+                          watch video</a></div>
+              
+              <p>       
+                  <a href="index.html#Maya" target="_self" class="back">       
+                      ← back to Main Page</a>   
+              </p>       
+          
+          </div>   
+      </section>
+      <section id="Physics">       
+          <div class="container">       
+              <h3>Physics Simulation</h3>
+              <ul>
+                  <li>boids</li>
+                  <li>hair</li>
+                  <li>force fields</li>
+                  <li>Soft and Rigid Body</li>
+                  <li>fractures</li>
+                  <li>RB constructs</li>
+                  <li>particle systems</li>
+              </ul>
+              <div style="text-align: center;"><img src="images/Maya/cubesmash.png" alt="Among Us Characters" width=70% align="center"></div>
+              <div class="ImgSub"> cube fracturing<br>
+                  <a href="https://www.youtube.com/watch?v=hVYKVqxOmnc" target="_blank">
+                      watch video</a></div>
+              
+              <div style="text-align: center;"><img src="images/Maya/canThrow.png" alt="Among Us Characters" width=70% align="center"></div>
+              <div class="ImgSub"> can throw<br>
+                  <a href="https://www.youtube.com/watch?v=pHKyT2t-EiQ" target="_blank">
+                      watch video</a></div>
+              
+              <p>       
+                  <a href="index.html#Maya" target="_self" class="back">       
+                      ← back to Main Page</a>   
+              </p>       
+          
+          </div>   
+      </section>
+  
   </div>
-
-  <!-- Footer -->
-  <section id="footer">
-    <div class="container">
-      <ul class="copyright">
-        <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-      </ul>
-    </div>
-  </section>
-
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">     
+            <ul class="copyright">     
+                <li> last updated: 23.04.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li> 
+            </ul> 
+        </div> 
+    </section>
 </div>
 
 <!-- Scripts -->
