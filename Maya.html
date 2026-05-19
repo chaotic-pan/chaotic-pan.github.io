@@ -63,13 +63,10 @@
               
               <h3> Overview </h3>
               <p>
-                  
-                  
-                  During my 3D Design class, I learned the basics of Maya for modeling, texturing, lighting, and rendering. 
-                  Some of these projects were assignments, while others I created on my own, just for fun and more practice.
-
-                  Through independent studies, I taught myself how to do 3D modeling, rigging, animation, and physics 
-                  simulations. Primarily, I used Blender for these projects, but I've also some experience with Maya.
+                  As part of an independent studies project, I taught myself how to work with various common aspects of
+                  3D creation software, like modeling, rigging, animation, and physics simulations. While the majority 
+                  of the here presented projects are made with the open-source software <b>Blender</b>, I also have 
+                  experience with the in professional setting more commonly used alternative <b>Autodesk Maya</b>.   
               </p>
               <p>
                   <a href="index.html#Maya" target="_self" class="back">
@@ -81,18 +78,19 @@
       <section id="Model">       
           <div class="container">       
               <h3>Modeling</h3>
-              <div style="text-align: center;"><img src="images/Maya/cubeIslands.png" alt="Among Us Characters" style="width:70%"></div>   
-              <div class="ImgSub"> "Cube Islands" model, constructed from primitives </div>
+              
+              <div style="text-align: center;"><img src="images/Maya/cubeIslands.png" style="width:70%"></div>   
+              <div class="ImgSub"> "Cube Islands" model, constructed exclusively with primitive shapes</div>
               <img src="images/Maya/Cafe.png" alt="Among Us Characters" style="width:100%">       
-              <div class="ImgSub"> Café model </div>
-              <img src="images/Maya/LizkoSit.png" alt="Among Us Characters" style="width:100%">       
+              <div class="ImgSub"> Café model with advanced slighting setup</div>
+              <img src="images/Maya/LizkoSit.png" style="width:100%">       
               <div class="ImgSub"> Character model "Lizko"</div>
               
               <img src="images/Maya/AmongUs.png" alt="Among Us Characters" style="width:100%">       
               <div class="ImgSub"> Among Us inspired models </div>
               
               <img src="images/Maya/Gramophone.png" alt="Gramophone" style="width:100%">       
-              <div class="ImgSub"> untextured Gramophone  model </div>
+              <div class="ImgSub"> technical gramophone model (untextured) </div>
               
               <p>       
                   <a href="index.html#Maya" target="_self" class="back">       
@@ -104,26 +102,15 @@
       <section id="Animation">       
           <div class="container">       
               <h3>Rigging + Animation</h3>
-              <ul>
-                  <li>building uo skeleton from scratch</li>
-                  <li>IK controller</li>
-                  <li>bone drivers</li>
-                  <li>bone layers</li>
-                  <li>bone widgets</li>
-                  <li>bendy bones setup for curve-like objects like hair</li>
-                  <li>custom written python script to create widget control bone visibilities and IK settings</li>
-                  <li>facial expression animation</li>
-                  <li>walk cycle and tool usage</li>
-              </ul>
               
               <table>
                   <tr class="image">
                       <td><img src="images/Maya/LizkoFaceDemo.png" style="width:95%">
-                          <div class="ImgSub">Face rig based on 2D texture animation<br>
+                          <div class="ImgSub">face rig controlling 2D texture animation<br>
                               <a href="https://www.youtube.com/watch?v=A4WDCfJJeec" target="_blank">
                                   watch video</a></div></td>
                       <td><img src="images/Maya/ManiFaceDemo.png" style="width:105%">
-                          <div class="ImgSub">3D face rig<br>
+                          <div class="ImgSub">detailed 3D face rig<br>
                               <a href="https://www.youtube.com/watch?v=8mkE4xoa2Qg" target="_blank">
                                   watch video</a></div></td>
                   </tr>
@@ -146,7 +133,7 @@
                       <td><img src="images/Maya/UnrealImport.png" style="width:100%">
                   </tr>
               </table>
-                  <br> <div class="ImgSub">Retargeting skeleton for Unreal import <br>
+                  <br> <div class="ImgSub">skeleton retargeting for Unreal import <br>
                       <a href="https://www.youtube.com/watch?v=bkzOo3vP3sY" target="_blank">
                           watch video</a></div>
               
@@ -160,24 +147,51 @@
       <section id="Physics">       
           <div class="container">       
               <h3>Physics Simulation</h3>
-              <ul>
-                  <li>boids</li>
-                  <li>hair</li>
-                  <li>force fields</li>
-                  <li>Soft and Rigid Body</li>
-                  <li>fractures</li>
-                  <li>RB constructs</li>
-                  <li>particle systems</li>
-              </ul>
-              <div style="text-align: center;"><img src="images/Maya/cubesmash.png" alt="Among Us Characters" width=70% align="center"></div>
-              <div class="ImgSub"> cube fracturing<br>
-                  <a href="https://www.youtube.com/watch?v=hVYKVqxOmnc" target="_blank">
+
+              <h4 style="color:#00c7ff"> Fractures & Destruction </h4>
+              
+              <table>
+                  <tr class="image">
+                      <td style="width:50%"><img src="images/Maya/fracture.png" style="width:100%">
+                          <div class="ImgSub">cube self-fracturing<br>
+                              <a href="https://www.youtube.com/watch?v=425ceIOqF78" target="_blank">
+                                  watch video</a></div></td>
+                      <td style="width:49%"><img src="images/Maya/cubesmash.png" style="width:100%">
+                          <div class="ImgSub">cube wreaking<br>
+                              <a href="https://www.youtube.com/watch?v=hVYKVqxOmnc" target="_blank">
+                                  watch video</a></div></td>
+                  </tr>
+              </table>
+
+              <div style="text-align: center;"><img src="images/Maya/lego.png" style="width:80%" align="center"></div>
+              <div class="ImgSub"> particle effects based lego castle explosion<br>
+                  <a href="https://www.youtube.com/watch?v=sa8KKebz4eU" target="_blank">
+                      watch video</a></div>
+
+              <h4 style="color:#00c7ff"> Rigid Body </h4>
+              
+              <div style="text-align: center;"><img src="images/Maya/bubbles.png" style="width:80%" align="center"></div>
+              <div class="ImgSub"> RB-based soap bubble interaction<br>
+                  <a href="https://www.youtube.com/watch?v=0Ou0Jbgwj3w" target="_blank">
                       watch video</a></div>
               
-              <div style="text-align: center;"><img src="images/Maya/canThrow.png" alt="Among Us Characters" width=70% align="center"></div>
-              <div class="ImgSub"> can throw<br>
+              <div style="text-align: center;"><img src="images/Maya/canThrow.png" alt="Among Us Characters" style="width:60%" align="center"></div>
+              <div class="ImgSub"> RB-based can pyramid<br>
                   <a href="https://www.youtube.com/watch?v=pHKyT2t-EiQ" target="_blank">
                       watch video</a></div>
+              
+              <div style="text-align: center;"><img src="images/Maya/trebuchet.png" style="width:70%"></div>
+              <div class="ImgSub">functioning trebuchet constructed via RB Constraints<br>
+                  <a href="https://www.youtube.com/watch?v=HqrMwXj1paQ" target="_blank">
+                      watch video</a></div>
+
+              <h4 style="color:#00c7ff"> Particle Systems </h4>
+              
+              <div style="text-align: center;"><img src="images/Maya/boids.png" style="width:80%" align="center"></div>
+              <div class="ImgSub"> BOID-brain controlled particle system exhibiting swarm movement and predator evasion<br>
+                  <a href="https://www.youtube.com/watch?v=bZJhPCURP_k" target="_blank">
+                      watch video</a></div>
+              
               
               <p>       
                   <a href="index.html#Maya" target="_self" class="back">       
@@ -192,7 +206,7 @@
     <section id="footer">
         <div class="container">     
             <ul class="copyright">     
-                <li> last updated: 23.04.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li> 
+                <li> last updated: 19.05.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li> 
             </ul> 
         </div> 
     </section>

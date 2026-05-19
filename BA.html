@@ -87,19 +87,19 @@
             <div class="container">
                 <h3> Technical Aspects </h3>
                 <p>
-                    
+                    The principles of Wave Function Collapse are based on assuming multiple possible states for each tile slot
+                    of a level, and continuously reducing them down to one final state. Using Unity as the engine, 
+                    I implemented an algorithm based on these concepts, that take a pre-made tileset as an input, and
+                    assembles the final level according to user defined tile-connection rules. <br>
+                    This setup was then expanded by scanning an input example picture to generate a usable tileset to be 
+                    used in the procedural level generation process. Through customizable parameters, the image sampling 
+                    could be additionally influenced to achieve different tile outcomes. <br> 
+                    Finally, a variation to the collapsing algorithm was introduced that allows for more option to fine-tune
+                    the resulting outcome, by adjusting the frequency of individual tiles, as well as specific tile 
+                    connections that define how often a tile is put next to certain other tiles.<br>
+                    Additionally, each algorithm variation was extensively tested and measured in regard to failure rate
+                    and processing time, to allow for comparision and evaluation.
                 </p>
-                <ul class="text">
-                    <li> unity </li>
-                    <li> procedurally building 2D levels from premade tileset  </li>
-                    <li> variation: generate tileset out of example image </li>
-                    <li> --- different sampling adjustments to achive different tile output </li>
-                    <li> variation: frequency notes to finetune tile output </li>
-                    <li> --- frequency of entire tiles  </li>
-                    <li> --- frequency of connections describing how likely a tile is put next to a specific other  </li>
-                    <li> comparision of calculation times etc. for various tile set and algorithm variations </li>
-                    
-                </ul>
                 <p>
                     <br>
                     <a href="index.html#BA" target="_self" class="back">
@@ -112,7 +112,6 @@
         <section id="Gallery">
             <div class="container">
                 <h3>Gallery</h3>
-                <p></p>
                 
                 <img src="images/BA/grid%20sampling.png" style="width:100%"><br>
                 <div class="ImgSub">different sampling configurations</div>
@@ -122,18 +121,22 @@
 
                 <table>
                     <tr class="image">
-                        <td><img src="images/BA/mapset2.png" style="width:100%">
+                        <td style="width:50%"><img src="images/BA/mapset2.png" style="width:100%">
                             <div class="ImgSub">sampled tileset with tileSize=tileOffset</div></td>
-                        <td><img src="images/BA/mapset1.png" style="width:100%">
+                        <td style="width:50%"><img src="images/BA/mapset1.png" style="width:100%">
                             <div class="ImgSub">sampled tiles with manually completed connection rules</div></td>
                     </tr>
                     <tr class="image">
-                        <td><img src="images/BA/sampledmapset2.png" style="width:100%">
+                        <td style="width:50%"><img src="images/BA/sampledmapset2.png" style="width:100%">
                             <div class="ImgSub">overlapping sampled tileset (tileSize>tileOffset)</div></td>
-                        <td><img src="images/BA/sampledmapset1.png" style="width:100%">
+                        <td style="width:50%"><img src="images/BA/sampledmapset1.png" style="width:100%">
                             <div class="ImgSub">sampled tiles with manually completed connection rules</div></td>
                     </tr>
                 </table>
+
+                <img src="images/BA/grassTilesS.png" style="width:100%">
+                <img src="images/BA/grassTilesL.png" style="width:100%">
+                    <div class="ImgSub">differently sized levels generated from more complex tileset </div>
                 
                 <p>
                     <a href="index.html#BA" target="_self" class="back">
@@ -149,7 +152,7 @@
     <section id="footer">
         <div class="container">
             <ul class="copyright">
-                <li>last updated: 23.04.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>last updated: 19.05.2026 </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>
     </section>
