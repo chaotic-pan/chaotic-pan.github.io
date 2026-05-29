@@ -66,7 +66,7 @@
                     input and environments in combination with deformable meshes, simulated through SoftBody physics. 
                     Due to a focus on applications in the indie game scene, the goals of this paper are not to find the 
                     most realistically accurate solutions, but rather to achieve a blend between performance lightening 
-                    optimizations and visually pleasing stylizations, all while relying exclusively on freely available, 
+                    optimizations and visually pleasing stylization, all while relying exclusively on freely available, 
                     open-source tools, like the Godot game engine and the 3D modeling and animating software Blender.
                     <br><br>
                     The results are a character mesh, which has been separated into distinct main body sections, to allow 
@@ -103,7 +103,7 @@
                     screen, and later replaced with more flexible WASD inputs, that control for-/backwards movement as 
                     well as rotation. <br>
                     With the movement of the main body controllable, the limbs then automatically react accordingly, 
-                    by making sure reach foot always stay in a natural range and angle from the body, resulting in the 
+                    by making sure each foot always stays in a natural range and angle from the body, resulting in the 
                     alternating movement of each foot. 
                     <br> <br>
                     Since Godot did not include any IK chain tools for 2D nor (at the time I began working on this thesis)
@@ -121,13 +121,13 @@
                     and redundant, since it requires each mesh vertex to be configured individually, with no option to
                     import that data from another program, making this tool functionally unusable for even slight higher
                     resolution meshes. Secondly, it only allows for full pinning of outer vertices to individual objects,
-                    resulting in harsh deformation of the surface. My goal however was it to achieve a movement that imitates
+                    resulting in harsh deformation of the surface. My goal however was to achieve a movement that imitates
                     the behaviour of real bodies, where the movement is driven from the bones within, which indirectly
                     pull along the soft tissue around them. 
                     <br><br>
-                    To create my custom SoftBodies, I internally subdivided the mesh, which created internal support springs, that 
-                    help preserving the objects volume, as well as internal access points, that could then be pinned to the 
-                    animation rig.
+                    To create my custom SoftBodies, I internally subdivided the mesh, which created internal support 
+                    springs that help preserve the object's volume, as well as internal access points that could then 
+                    be pinned to the animation rig.
                     Additionally, as a way to improve the performance of simulating complex, concave character meshes, I
                     developed a concept that separates the full mesh into smaller, simplified body sections, based on the
                     main bone areas of the rig, and only simulate these proxy-objects. The original mesh surface can then 
