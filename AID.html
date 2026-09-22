@@ -1,0 +1,193 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<head>
+    <title>Liz Kintzel: A.I.D.</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<section id="header">
+    <header>
+        <span class="image avatar"><img src="images/lizart.png" alt="" /></span>
+        <h1 id="logo"><a href="#">Liz Kintzel</a></h1>
+        <p>A.I.D. <br> Abomination Inquiry Desk </p>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="#About" class="active">Overview</a></li>
+            <li><a href="#tech">Technical Aspects</a></li>
+            <li><a href="#Gallery">Gallery</a></li>
+            <li><a href="index.html#AID"> ← back to Main Page</a></li>
+            <li><a href="index.html#Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <ul class="feature-icons">
+            <li><a href="mailto: ElisabethKintzel@gmx.de" target="_blank"  class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            <li><a href="https://github.com/chaotic-pan" target="_blank"  class="icon brands fa-github"><span class="label">Github</span></a></li>
+            <li><a href="https://www.linkedin.com/in/elisabeth-kintzel-b44074201/" target="_blank"  class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        </ul>
+    </footer>
+</section>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- About -->
+        <section id="About">
+            <div class="image main" data-position="center">
+                <img src="images/Aid/aidbanner.png" alt="" />
+            </div>
+            <div class="container">
+                <p>
+                    <a href="index.html#AID" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+                
+                <header class="major">
+                    <h2>A.I.D.</h2>
+                </header>
+                
+                <p>
+                    In <h7><b style="color:#00c7ff">Abomination Inquiry Desk</b></h7> you play as a phone operator for a monster-
+                    encounter-hotline. Your job is figure out which monster the callers are dealing with, by carefully 
+                    listening to their description of the situation and the creature's behaviour, asking relevant 
+                    questions, and comparing the gathered information with your monster encyclopedia.
+                    <br>
+                    It is an investigative game that tries to convey a gamified version of a phone operator's life.  
+                    A sense of uneasiness and pressure is instilled through the horror-setting, time pressure and not 
+                    being able to “directly” control the outcome. Making the player feel empathy towards the callers by 
+                    making them seem as human as possible is achieved through emotions in the dialogues and individual 
+                    NPCs with different personalities. The imagination of the player is active since they will never 
+                    really know exactly what is going on. Only through the dialogue do they get clues as to what might 
+                    be happening. Imagination will fill the gaps.
+                    <br><br>
+                    This game was created as part of a uni assignment, and as such only exists as a concept demo, which 
+                    currently is not available as playable demo.
+                </p>
+
+                <p>
+                    <a href="index.html#AID" target="_self" class="back">
+                        ← back to Main Page</a> <br>
+                </p>
+                
+            </div>
+        </section>
+
+        <section id="tech">
+            <div class="container">
+                <h3> Technical Aspects </h3>
+                <p>
+                    <br>
+                    During the development of our concept demo, we used different technologies and encountered multiple 
+                    situations, where we needed to learn or adapt. The game engine we decided to work with was Godot, 
+                    with the additionally use Dialogic, which is a Godot plugin, specifically for creating dialogue systems. 
+                    <br> <br>
+                    We decided to use Dialogic, as creating the entire dialog structure from scratch would have taken a 
+                    lot of our resources, which we were now able to instead use to further refine other portions of our 
+                    game. While Dialogic was a very useful addition to our tech stack, due to its own script language, 
+                    issues occurred along the development process that required our attention and creative thinking. <br>
+                    One issue with the premade scripts was that they had no built-in way to track whether certain parts 
+                    of the dialogue tree had already been visited. Since we have many options and many possibly 
+                    repeatable texts, this was an important feature that was missing for our purposes. We had to 
+                    improvise and create our own, manual trackers, by creating individual variables for each dialog 
+                    branch, containing the information on whether the question had already been asked by the player. 
+                    While the solution we found is not very elegant and definitely has room for optimisation, we were 
+                    unable to find a better solution considering our time restraints and the system provided by Dialogic. <br>
+                    Another issue encountered was the timer system. For our game, we wanted to implement a timer, where 
+                    after a few seconds of inactivity the caller would make some increasingly distressed comment. This 
+                    was not compatible with Dialogic, as the system did not support such prompting of dialogue. 
+                    Therefore, we instead created a counter system, where the message prompts appeared depending on the 
+                    amount of questions asked already during the call. <br>
+                    Overall, the Dialogic system enhanced our work progress and removed much of the base work required 
+                    for a dialogue system. However, should we decide to continue development of this game in the future,
+                    we would likely create our own dialogue logic, since many technical needs of our specific case, 
+                    cannot be satisfied by Dialogic.
+                    <br><br>
+                    The Encyclopaedia, one of our core elements, was one of the features that required the most 
+                    time-intensive testing to enable the UI system and usage of the mouse inputs on the surface of the 
+                    3D model, the 2D space needed to be mapped onto the book’s model. <br>
+                    For flat surfaces and planes such as the monitor, the implementation went without issues. However, 
+                    the book, with its irregular shape, required additional adjustments. Basic 3D model shapes, like the
+                    monitor’s plane, have a fixed size variable that can easily be called to calculate the translation 
+                    into 3D space. More complex models, however, do not include this size variable. Instead, we had to 
+                    manually determine the correct aspects required for the calculation, making sure that the visual 
+                    components of the UI match up exactly with the input areas through extensive fine-tuning.
+                <p>
+                    <br>
+                    <a href="index.html#AID" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+
+            </div>
+        </section>
+
+        <section id="Gallery">
+            <div class="container">
+                <h3>Gallery</h3>
+                <p></p>
+
+                <img src="images/Aid/desk.png" width="100%">
+                <div class="ImgSub">the desk, containing the telephone, the monster encyclopedia, and the computer, 
+                    that transcribes the conversation</div>
+
+                <img src="images/Aid/book.png" width="100%">
+                <div class="ImgSub">the encyclopedia, showing the page for the 'Screamer'</div>
+                
+                <img src="images/Aid/monsters.png" width="100%">
+                <div class="ImgSub">overview of different monsters</div>
+
+                <table class="image">
+                    <tr>
+                        <td style="width:48%"><img src="images/Aid/DialogicGraph.png" style="width:100%"></td>
+                        <td style="width:52%"> <img src="images/Aid/DialogicScript.png" style="width:100%"></td>
+                    </tr>
+                </table>
+                <div class="ImgSub">Dialog scripting using the Dialogic2 plugin</div>
+
+                <img src="images/Aid/NPCs.png" width="100%">
+                <div class="ImgSub">reappearing NPC characterisation</div>
+
+                <p>
+                    <a href="index.html#AID" target="_self" class="back">
+                        ← back to Main Page</a>
+                </p>
+                
+            </div>
+        </section>
+        
+    </div>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>last updated: 22.09.2026</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -127,6 +127,12 @@ a:hover {
     border-bottom-color: transparent !important;
     font-weight: 1000;
 }
+.demo {
+    color: #0b95bf !important;
+    float: left; !important;
+    border-bottom-color: transparent !important;
+    font-weight: 1000;
+}
 .back {
     color: #0b95bf !important;
     float: left !important;
@@ -188,7 +194,7 @@ h5.secondary {
 }
 
 h6 {
-    color: #0b95bf;
+    color: #7bd5ff;
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 100;
